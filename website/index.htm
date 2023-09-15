@@ -7,6 +7,7 @@
     <!-- Google Fonts Link For Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calculator.css">
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -27,6 +28,35 @@
             <button class="login-btn">LOG IN</button>
         </nav>
     </header>
+
+    <!-- Calculator Section -->
+    <div class="calculator-container">
+        <input type="text" id="result" readonly>
+        <div>
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button onclick="appendToResult('+')">+</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button onclick="appendToResult('-')">-</button>
+        </div>
+        <div>
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button onclick="appendToResult('*')">*</button>
+        </div>
+        <div>
+            <button onclick="clearResult()">C</button>
+            <button onclick="appendToResult('0')">0</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToResult('/')">/</button>
+        </div>
+    </div>
 
     <div class="blur-bg-overlay"></div>
     <div class="form-popup">
@@ -54,6 +84,7 @@
                 </div>
             </div>
         </div>
+
         <div class="form-box signup">
             <div class="form-details">
             </div>

@@ -29,3 +29,42 @@ signupLoginLink.forEach(link => {
         formPopup.classList[link.id === 'signup-link' ? 'add' : 'remove']("show-signup");
     });
 });
+
+
+// calculator.js
+
+let currentInput = '';
+let result = 0;
+let operator = '';
+
+function appendToResult(value) {
+    currentInput += value;
+    document.getElementById('result').value = currentInput;
+}
+
+function clearResult() {
+    currentInput = '';
+    result = 0;
+    operator = '';
+    document.getElementById('result').value = '';
+}
+
+function calculateResult() {
+    if (operator === '+') {
+        result += parseFloat(currentInput);
+    } else if (operator === '-') {
+        result -= parseFloat(currentInput);
+    } else if (operator === '*') {
+        result *= parseFloat(currentInput);
+    } else if (operator === '/') {
+        result /= parseFloat(currentInput);
+    } else {
+        result = parseFloat(currentInput);
+    }
+
+    currentInput = '';
+    operator = '';
+    document.getElementById('result').value = result;
+}
+
+
