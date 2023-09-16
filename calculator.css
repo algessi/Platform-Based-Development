@@ -1,0 +1,47 @@
+/* Calculator container styles */
+.calculator-container {
+    width : 100%;
+    display: flex;
+    justify-Content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Adjust the value as needed to account for the header */
+    background-color: transparent; /* Add a background color */
+    padding: 20px;
+    gap: 4px;
+    flex-direction: column;
+}
+
+/* Style the calculator input, buttons, etc. here as needed */
+.calculator-container input[type="text"] {
+    width: 100%;
+    max-width: 130px;
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.calculator-container div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.calculator-container button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #5D3FD3; /* Purple background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.calculator-container button:hover {
+    background-color: #45309b; /* Darker purple on hover */
+}
+
+/* Additional styles as needed */
