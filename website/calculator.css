@@ -8,6 +8,7 @@
     background-color: transparent; /* Add a background color */
     padding: 20px;
     gap: 4px;
+    flex-direction: column;
 }
 
 /* Style the calculator input, buttons, etc. here as needed */
