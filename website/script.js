@@ -38,33 +38,69 @@ let result = 0;
 let operator = '';
 
 function appendToResult(value) {
-    currentInput += value;
-    document.getElementById('result').value = currentInput;
+  currentInput += value;
+  document.getElementById('result').value = currentInput;
 }
 
 function clearResult() {
-    currentInput = '';
-    result = 0;
-    operator = '';
-    document.getElementById('result').value = '';
+  currentInput = '';
+  result = 0;
+  operator = '';
+  document.getElementById('result').value = '';
 }
 
 function calculateResult() {
-    if (operator === '+') {
-        result += parseFloat(currentInput);
-    } else if (operator === '-') {
-        result -= parseFloat(currentInput);
-    } else if (operator === '*') {
-        result *= parseFloat(currentInput);
-    } else if (operator === '/') {
-        result /= parseFloat(currentInput);
-    } else {
-        result = parseFloat(currentInput);
-    }
+  // Validate the input.
+  if (!currentInput || isNaN(parseFloat(currentInput))) {
+    alert('Invalid input. Please enter a number.');
+    return;
+  }
 
-    currentInput = '';
-    operator = '';
-    document.getElementById('result').value = result;
+  // Perform the calculation.
+  switch (operator) {
+    case '+':
+      result += parseFloat(currentInput);
+      break;
+    case '-':
+      result -= parseFloat(currentInput);
+      break;
+    case '*':
+      result *= parseFloat(currentInput);
+      break;
+    case '/':
+      result /= parseFloat(currentInput);
+      break;
+    default:
+      result = parseFloat(currentInput);
+  }
+
+  // Update the displayed result.
+  document.getElementById('result').value = result;
+
+  // Reset the current input and operator.
+  currentInput = '';
+  operator = '';
 }
+
+// Add a button click listener to each math operation button.
+document.getElementById('plus').addEventListener('click', () => {
+  operator = '+';
+  calculateResult();
+});
+
+document.getElementById('minus').addEventListener('click', () => {
+  operator = '-';
+  calculateResult();
+});
+
+document.getElementById('multiply').addEventListener('click', () => {
+  operator = '*';
+  calculateResult();
+});
+
+document.getElementById('divide').addEventListener('click', () => {
+  operator = '/';
+  calculateResult();
+});
 
 
